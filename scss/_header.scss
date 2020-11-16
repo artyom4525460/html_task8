@@ -1,0 +1,203 @@
+.header {
+    background-color: #fff;
+    padding-top: 100px;
+    width: 100%;
+    @media screen and (max-width: $max-desktop-width) {
+        padding-top: 4vw;
+    }
+    @media screen and (max-width: $max-desktop-width-1366) {
+        padding-top: 2vw;
+    }
+    @media screen and (max-width: $max-width) {
+        padding-top: 2vw;
+    }
+    @media screen and (max-width: $max-mobile-width) {
+        padding-top: 50px;
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+        .menu-button {
+            cursor: pointer;
+            width: 60px;
+            @media screen and (max-width: $max-width) {
+                width: 6vw;
+            }
+        }
+        .header-title {
+            font-size: 60px;
+            text-transform: uppercase;
+            padding-left: 45px;
+            font-weight: bold;
+            @media screen and (max-width: $max-width) {
+                font-size: 6vw;
+                padding-left: 4.5vw;
+            }
+        }
+    }
+    .title {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin: 30px 0 0;
+        @media screen and (max-width: $max-desktop-width) {
+            margin: 2vw 0 0;
+        }
+        @media screen and (max-width: $max-desktop-width-1366) {
+            margin: 0;
+        }
+        @media screen and (max-width: $max-width) {
+            margin: 0;
+        }
+        @media screen and (max-width: $max-mobile-width) {
+            margin: 30vw 0 0;
+        }
+        .location {
+            font-size: 40px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            @media screen and (max-width: $max-width) {
+                font-size: 4vw;
+            }
+            @media screen and (max-width: $max-mobile-width) {
+                font-size: 14px;
+            }
+            .marker-img {
+                width: 45px;
+                height: 54px;
+                margin: 0 20px;
+                @media screen and (max-width: $max-width) {
+                    width: 4.5vw;
+                    height: 5.4vw;
+                    margin: 0 2vw;
+                }
+                @media screen and (max-width: $max-mobile-width) {
+                    width: 14px;
+                    height: 17px;
+                }
+            }
+        }
+    }
+    .link-block {
+        position: absolute;
+        right: 0;
+        width: fit-content;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 15px 20px;
+        @media screen and (max-width: $max-width) {
+            padding: 1.5vw 2vw
+        }
+        @media screen and (max-width: 1025px){
+            position: relative;
+            .info-text{
+                display: none;
+            }
+        }
+        @media screen and (max-width: $max-mobile-width) {
+            padding-top: 20px;
+            .info-text{
+                display: block;
+            }
+        }
+
+
+        a{
+            display: flex;
+            align-items: center;
+        }
+        .info-text{
+            font-size: 18px;
+            color: #737b80;
+            text-decoration: underline;
+        }
+        .info-icon{
+            margin-left: 3px;
+        }
+        .question {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            border: 2px solid $green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            font-weight: bold;
+            color: $green;
+            margin-left: 10px;
+            @media screen and (max-width: $max-width) {
+                width: 3vw;
+                height: 3vw;
+                border-radius: 1.5vw;
+                font-size: 1.9vw;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+.header-home-screen {
+    display: flex;
+    padding-top: 10px;
+    background-color: #ffffff;
+    filter: drop-shadow(0px 3px 11.5px rgba(0,0,0,0.07));
+    @media screen and (max-width: $max-width) {}
+    @media screen and (max-width: $max-mobile-width) {
+        display: block;
+    }
+    .search-block {
+        // padding-left: 3px;
+        // @media screen and (max-width: $max-width) {
+        //     padding-left: 3vw;
+        // }
+        // @media screen and (max-width: $max-mobile-width) {
+        //     padding-left: 0;
+        // }
+        .search-controls{
+            display: flex;
+            @media screen and (max-width: $max-mobile-width) {
+                display: block;
+            }
+            @media screen and (max-width: $max-mobile-width) {
+                margin-left: 10px;
+                width: 240px;
+            }
+            button{
+                margin: 0;
+                margin-left: 10px;
+                width: 139px;
+                height: 50px;
+                border-radius: 25px;
+                @media screen and (max-width: $max-width) {
+                    width: 13.9vw;
+                    margin-left: 1vw;
+                    height: 6vw;
+                }
+                @media screen and (max-width: $max-mobile-width) {
+                    width: 193px;
+                    margin-top: 10px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+    .logo{
+        padding-top: 5px;
+        @media screen and (max-width: $max-width) {
+            padding-top: 0.5vw;
+        }
+        @media screen and (max-width: $max-mobile-width) {
+            padding-top: 0;
+        }
+    }
+}
+
+.header-with-share{
+    position: relative;
+    background: none;
+}

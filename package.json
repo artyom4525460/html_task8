@@ -1,0 +1,25 @@
+{
+  "dependancies": {
+    "node-sass": "^4.7.2"
+  },
+  "scripts": {
+    "scss": "node-sass --watch scss -o css"
+  },
+  "name": "html_task2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artyom4525460/html_task2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artyom4525460/html_task2/issues"
+  },
+  "homepage": "https://github.com/artyom4525460/html_task2#readme",
+  "description": "",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

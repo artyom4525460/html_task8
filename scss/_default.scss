@@ -1,0 +1,136 @@
+/*
+    DEFAULT
+*/
+
+$max-width: 1000px;
+$max-mobile-width: 450px;
+$max-desktop-width: 1600px;
+$max-desktop-width-1366: 1366px;
+
+/* colors: */
+$blue: #2f89fc;
+$green: #84cb76;
+$red: #f35d14;
+$light-blue: #e0edff;
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #fdfdfd;
+    font-family: "Gilroy", Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    font-size: 40px;
+    color: #292929;
+    @media screen and (max-width: $max-width){
+        font-size: 4vw;
+    }
+    @media screen and (max-width: $max-mobile-width){
+        font-size: 18px;
+    }
+}
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+section{
+    padding: 0 20px;
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    background-color: #fdfdfd;
+    box-sizing: border-box;
+    @media screen and (max-width: $max-width){
+        padding: 0 2vw;
+    }
+    @media screen and (max-width: $max-mobile-width){
+        padding: 0 20px;
+    }
+}
+
+.full-section{
+    max-width: 1920px;
+}
+
+
+.title{
+    font-size: 60px;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 0 20px;
+    @media screen and (max-width: $max-width){
+        font-size: 6vw;
+        padding: 1vw 0 2vw;
+    }
+    @media screen and (max-width: $max-mobile-width){
+        font-size: 28px;
+    }
+}
+
+*{
+    outline: none;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    color: $green;
+    font-size: 18px;
+    text-decoration: none;
+    @media screen and (max-width: $max-width){
+        font-size: 1.8vw;
+    }
+    @media screen and (max-width: $max-mobile-width){
+        font-size: 18px;
+    }
+}
+
+h3{
+    font-size: 26px;
+    color: #292929;
+    font-weight: bold;
+    margin: 30px 0;
+    @media screen and (max-width: $max-desktop-width){
+        margin: 2vw 0;
+    }
+    @media screen and (max-width: $max-desktop-width-1366){
+        margin: 1vw 0;
+    }
+    @media screen and (max-width: $max-width){
+        font-size: 2.6vw;
+        margin: 2vw 0;
+    }
+    @media screen and (max-width: $max-mobile-width){
+        font-size: 22px;
+        margin: 30px 0;
+    }
+}
+
+.search-header{
+    @media screen and (max-width: $max-mobile-width){
+        padding-bottom: 90px;
+    }
+}
+
+.no-padding-bottom{
+    padding-bottom: 0 !important;
+}
+
+.margin-top-50{
+    margin-top: -70px;
+    @media screen and (max-width: $max-width){
+        margin-top: -7vw;
+    }
+    @media screen and (max-width: 1440px){
+        margin-top: -5vw;
+    }
+    @media screen and (max-width: 650px){
+        margin-top: -3vw;
+    }
+    @media screen and (max-width: $max-mobile-width){
+        margin-top: -50px;
+    }
+}

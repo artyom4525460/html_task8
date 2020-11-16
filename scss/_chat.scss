@@ -1,0 +1,284 @@
+
+.chat{
+    width: 100%;
+    .chat-form{
+        padding: 15px 24px;
+        width: 100%;
+
+        background-color: #fff;
+        filter: drop-shadow(0px 40px 23px rgba(0,0,0,0.05));
+        border-radius: 20px 20px 0 0;
+        @media screen and (max-width: $max-width){
+            padding: 1.5vw 2.4vw;
+        }
+        @media screen and (max-width: $max-mobile-width){
+            padding: 10px 15px;
+        }
+        form{
+            width: 100%;
+            display: flex;
+            .form-field{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                margin-right: 44px;
+                @media screen and (max-width: $max-width){
+                    margin-right: 2.29vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 50%;
+                    padding-bottom: 20px;
+                }
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .chat-screen{
+        padding: 15px 45px 40px;
+        background-color: #fff;
+        .item{
+            margin: 8px 0;
+            display: flex;
+            justify-content: flex-end;
+            @media screen and (max-width: $max-width){
+                margin: 0.8vw 0;
+            }
+            @media screen and (max-width: $max-mobile-width){
+                margin: 5px 0;
+            }
+            .item-block{
+                position: relative;
+                max-width: 100%;
+                background-color: #fff;
+                border-radius: 10px;
+                border-radius: 0 17px 17px 17px;
+                filter: drop-shadow(0px 40px 23px rgba(0,0,0,0.05));
+                padding: 15px;
+                @media screen and (max-width: $max-width){
+                    padding: 1.5vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    padding: 10px;
+                }
+            }
+            .video-block-container{
+                width: 326px;
+                max-width: 100%;
+                text-align: center;
+                @media screen and (max-width: $max-width){
+                    width: 32.6vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 100%;
+                }
+            }
+            .images-block-container{
+                width: 341px;
+                max-width: 100%;
+                text-align: left;
+                @media screen and (max-width: $max-width){
+                    width: 34.1vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 100%;
+                }
+            }
+            .text-block-container{
+                width: 407px;
+                max-width: 100%;
+                text-align: left;
+                font-size: 16px;
+                color: #0e1f37;
+                font-weight: 500;
+                @media screen and (max-width: $max-width){
+                    width: 40.7vw;
+                    font-size: 1.6vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 100%;
+                    font-size: 14px;
+                }
+            }
+            .scale-block-container{
+                width: 407px;
+                @media screen and (max-width: $max-width){
+                    width: 40.7vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 100%;
+                }
+            }
+            .time{
+                width: 100%;
+                text-align: right;
+                padding: 18px 0 5px;
+                font-size: 16px;
+                color: #3e4c5f;
+                font-weight: 500;
+                @media screen and (max-width: $max-width){
+                    padding: 1.8vw 0 0.5vw;
+                    font-size: 1.6vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    padding: 10px 0;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .video{
+            position: relative;
+            width: 244px;
+            margin: 0 auto;
+            @media screen and (max-width: $max-width){
+                width: 24.4vw;
+            }
+            @media screen and (max-width: $max-mobile-width){
+                width: 244px;
+            }
+            img{
+                width: 100%;
+            }
+            .button-block{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 82px;
+                height: 82px;
+                border-radius: 41px;
+                background-color: rgba($color: #ffffff, $alpha: 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                @media screen and (max-width: $max-width){
+                    width: 8.2vw;
+                    height: 8.2vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 41px;
+                    height: 41px;
+                }
+                .button{
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 22px;
+                    background-color: #ffffff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    @media screen and (max-width: $max-width){
+                        width: 4.4vw;
+                        height: 4.4vw;
+                    }
+                    @media screen and (max-width: $max-mobile-width){
+                        width: 20px;
+                        height: 20px;
+                    }
+                    img{
+                        width: 11px;
+                    }
+                }
+            }
+        }
+
+        .video-block, .image-block, .text-block{
+            display: flex;
+        }
+        .image-block{
+            img{
+                width: 118px;
+                margin-left: 5px;
+                @media screen and (max-width: $max-width){
+                    width: 11.8vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 70px;
+                }
+            }
+        }
+    }
+    .send-message{
+        display: flex;
+        align-items: center;
+        padding: 24px;
+        border-radius: 0 0 20px 20px;
+        filter: drop-shadow(0px -20px 11.5px rgba(0,0,0,0.02));
+        background-color: #ffffff;
+        @media screen and (max-width: $max-width){
+            padding: 2.4vw;
+        }
+        @media screen and (max-width: $max-mobile-width){
+            padding: 10px;
+        }
+        button{
+        }
+        .attache{
+            margin-right: 7px;
+            display: flex;
+            img{
+                width: 40px;
+                @media screen and (max-width: $max-width){
+                    width: 4vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 30px;
+                }
+            }
+        }
+        .message-input{
+            width: 100%;
+        }
+        .button{
+            margin: 0 4px;
+            width: 138px;
+            min-width: 138px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #2f89fc;
+            font-size: 18px;
+            @media screen and (max-width: $max-width){
+                width: 13.8vw;
+                min-width: 13.8vw;
+                height: 5vw;
+                font-size: 1.8vw;
+            }
+            @media screen and (max-width: $max-mobile-width){
+                width: 70px;
+                min-width: 70px;
+                height: 40px;
+                font-size: 15px;
+            }
+        }
+        .send-button{
+            min-width: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #2f89fc;
+            @media screen and (max-width: $max-width){
+                min-width: 5vw;
+                width: 5vw;
+                height: 5vw;
+            }
+            @media screen and (max-width: $max-mobile-width){
+                min-width: 40px;
+                width: 40px;
+                height: 40px;
+            }
+            img{
+                width: 20px;
+                @media screen and (max-width: $max-width){
+                    width: 2vw;
+                }
+                @media screen and (max-width: $max-mobile-width){
+                    width: 15px;
+                }
+            }
+        }
+    }
+}
