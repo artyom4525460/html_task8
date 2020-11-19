@@ -1488,3 +1488,36 @@ button {
         @media screen and (max-width: 450px) {
           .chat .send-message .send-button img {
             width: 15px; } }
+  .chat .chat-button {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    margin-bottom: -15px; }
+    @media screen and (max-width: 1000px) {
+      .chat .chat-button {
+        padding-top: 1vw;
+        margin-bottom: -1.5vw; } }
+    @media screen and (max-width: 450px) {
+      .chat .chat-button {
+        padding-top: 10px;
+        margin-bottom: -15px; } }
+    .chat .chat-button .button {
+      margin: 0 4px;
+      width: 138px;
+      min-width: 138px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: #2f89fc;
+      font-size: 18px; }
+      @media screen and (max-width: 1000px) {
+        .chat .chat-button .button {
+          width: 13.8vw;
+          min-width: 13.8vw;
+          height: 5vw;
+          font-size: 1.8vw; } }
+      @media screen and (max-width: 450px) {
+        .chat .chat-button .button {
+          width: 70px;
+          min-width: 70px;
+          height: 40px;
+          font-size: 15px; } }
