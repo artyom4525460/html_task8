@@ -1272,7 +1272,9 @@ button {
           margin-right: 0; }
   .chat .chat-screen {
     padding: 15px 45px 40px;
-    background-color: #fff; }
+    background-color: #fff;
+    max-height: 70vh;
+    overflow-y: scroll; }
     .chat .chat-screen .item {
       margin: 8px 0;
       display: flex;

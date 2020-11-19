@@ -38,6 +38,8 @@
     .chat-screen{
         padding: 15px 45px 40px;
         background-color: #fff;
+        max-height: 70vh;
+        overflow-y: scroll;
         .item{
             margin: 8px 0;
             display: flex;
