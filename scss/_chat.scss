@@ -284,15 +284,12 @@
     .chat-button{
         display: flex;
         justify-content: flex-end;
-        padding-top: 10px;
-        margin-bottom: -15px;
+        margin-bottom: -30px;
         @media screen and (max-width: $max-width){
-            padding-top: 1vw;
             margin-bottom: -1.5vw;
         }
         @media screen and (max-width: $max-mobile-width){
-            padding-top: 10px;
-            margin-bottom: -15px;
+            margin-bottom: -30px;
         }
         .button {
             margin: 0 4px;
