@@ -482,6 +482,14 @@ button {
         @media screen and (max-width: $max-mobile-width) {
             height: 6px;
         }
+
+        progress {
+            display:block;
+            width:100%;
+            height:100%;
+            border:none;
+            color: $blue;
+         }
     }
     .range-fill-line{
         width: calc(50% + 10px);

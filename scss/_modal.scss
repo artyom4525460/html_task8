@@ -9,6 +9,9 @@
     justify-content: center;
     top: 0;
     z-index: 10;
+    &.hide{
+        display: none;
+    }
 }
 
 .modal{
@@ -20,6 +23,9 @@
     border-radius: 20px;
     background-color: #ffffff;
     border: 1px solid #707070;
+    &.hide{
+        display: none;
+    }
     &-inner{
         width: 100%;
         padding: 20px;
@@ -50,6 +56,11 @@
     padding: 40px;
     .video-block{
         position: relative;
+        video{
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
         .video-button-block{
             position: absolute;
             top: 50%;
