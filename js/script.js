@@ -23,6 +23,7 @@ let videoModal = {
     onNext : () => {
         this.videoModalBlock.classList.add('hide')
         chatModal.onShow()
+        video.onPause()
     }
 }
 
@@ -67,19 +68,26 @@ let video = {
     videoVol : document.getElementById('videoVol'),
     videoControls: document.getElementById('videoControls'),
     videoTag: document.getElementById('videoTag'),
+    isMoveProgressButton: false,
     videoInit : () => {
-        var supportsProgress = (document.createElement('progress').max !== undefined);
-        if (!supportsProgress) progress.setAttribute('data-state', 'fake')
-        videoControls.setAttribute('data-state', 'visible')
+        // var supportsProgress = (document.createElement('progress').max !== undefined);
+        // if (!supportsProgress) progress.setAttribute('data-state', 'fake')
+        // videoControls.setAttribute('data-state', 'visible')
+        this.videoProgress.max = this.videoTag.duration
     },
     hidePlayButton : () => {
         this.videoButtonBlock.classList.add('hide')
     },
     onPlay : async () => {
         this.videoButtonBlock.classList.add('hide')
-        console.log(videoTag)
         await this.videoTag.play()
         this.videoPlayButton.setAttribute('data-state', 'play')
+    },
+    onPause : async () => {
+        if(this.videoPlayButton.dataset.state == 'play'){
+            await this.videoTag.pause()
+            this.videoPlayButton.setAttribute('data-state', 'pause')
+        }
     },
     onPausePlay : () => {
         switch (this.videoPlayButton.dataset.state) {
@@ -113,7 +121,47 @@ let video = {
         // else if (type == 'mute') {
         //    mute.setAttribute('data-state', video.muted ? 'unmute' : 'mute');
         // }
-     }
+    },
+    progressVideo : () => {
+        this.videoProgress.value = this.videoTag.currentTime
+        this.videoProgressButton.style.left = Math.floor((this.videoTag.currentTime / this.videoTag.duration) * 100) + '%'
+    },
+    moveProgressButton : (event) => {
+        event.preventDefault()
+        video.isMoveProgressButton = true
+        let progressButtonPosition = event.clientX
+        let currentPosition = this.videoProgressButton.offsetLeft
+        document.addEventListener('mousemove', function(e){
+            if(video.isMoveProgressButton){
+                video.moveToPosition(progressButtonPosition, e.clientX, currentPosition)
+            }
+        })
+
+        document.addEventListener('mouseup', function(e){
+            video.isMoveProgressButton = false
+        })
+    },
+    moveToPosition : (moveFrom, moveTo, currentPosition) => {
+        let delta = moveTo - moveFrom
+        if(currentPosition + delta < 0){
+            video.videoProgressButton.style.left = 0
+        }
+        else if(currentPosition + delta > video.videoProgress.offsetWidth){
+            video.videoProgressButton.style.left = video.videoProgress.offsetWidth + 'px'
+        }
+        else{
+            video.videoProgressButton.style.left = Math.floor( 100 * (currentPosition + delta) / video.videoProgress.offsetWidth ) + '%'
+        }
+        video.videoTag.currentTime = Math.floor( (100 * (currentPosition + delta) / video.videoProgress.offsetWidth ) * this.videoTag.duration / 100) 
+    },
+    changeSoundVol : () => {
+        if(this.videoTag.volume == 1){
+            this.videoTag.volume = 0.1
+        }
+        else{
+            this.videoTag.volume = (this.videoTag.volume + 0.1).toFixed(1)
+        }
+    }
 }
 
 broadcast.broadcastButton.addEventListener('click', broadcast.clickBroadcastButton)
@@ -128,3 +176,6 @@ chatModal.chatBroadcastButton.addEventListener('click', chatModal.onBroadcastCli
 
 video.videoPlayButton.addEventListener('click', video.onPlay)
 video.videoTag.addEventListener('click', video.onPausePlay)
+video.videoTag.addEventListener('timeupdate', video.progressVideo)
+video.videoProgressButton.addEventListener('mousedown', video.moveProgressButton)
+video.videoVol.addEventListener('click', video.changeSoundVol)

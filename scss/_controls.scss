@@ -463,7 +463,7 @@ button {
     }
     .range-line{
 
-
+        position: relative;
         height: 6px;
         border-radius: 3px;
         background-color: #2f89fc;
@@ -487,7 +487,6 @@ button {
             display:block;
             width:100%;
             height:100%;
-            border:none;
             color: $blue;
          }
     }
@@ -498,7 +497,7 @@ button {
         left: 0;
         background-color: $blue;
         transform: translate(0, -50%);
-    }
+    } 
     .range-button{
         width: 44px;
         height: 42px;
@@ -506,10 +505,12 @@ button {
         filter: drop-shadow(0px 20px 11.5px rgba(47,137,252,0.16));
         background-color: #ffffff;
         border: 8px solid #2f89fc;
-
         cursor: pointer;
-        left: 50%;
+        left: 0;
         position: absolute;
+        transform: translate(-50%, -50%);
+        top: 2px;
+
         @media screen and (max-width: $max-width){
             width: 4.4vw;
             height: 4.4vw;
