@@ -1292,18 +1292,29 @@ button {
   .chat .chat-screen {
     padding: 15px 45px 40px;
     background-color: #fff;
-    max-height: 70vh;
+    height: 70vh;
     overflow-y: scroll; }
+    .chat .chat-screen .chat-container {
+      width: 100%;
+      min-height: calc(70vh - 5vw - 45px); }
     .chat .chat-screen .item {
       margin: 8px 0;
       display: flex;
-      justify-content: flex-end; }
+      justify-content: flex-end;
+      position: relative; }
       @media screen and (max-width: 1000px) {
         .chat .chat-screen .item {
           margin: 0.8vw 0; } }
       @media screen and (max-width: 450px) {
         .chat .chat-screen .item {
           margin: 5px 0; } }
+      .chat .chat-screen .item .close-button {
+        cursor: pointer;
+        position: absolute;
+        font-size: 16px;
+        right: 5px;
+        top: 5px;
+        z-index: 5; }
       .chat .chat-screen .item .item-block {
         position: relative;
         max-width: 100%;
@@ -1354,7 +1365,8 @@ button {
             width: 100%;
             font-size: 14px; } }
       .chat .chat-screen .item .scale-block-container {
-        width: 407px; }
+        width: 407px;
+        min-width: fit-content; }
         @media screen and (max-width: 1000px) {
           .chat .chat-screen .item .scale-block-container {
             width: 40.7vw; } }
@@ -1386,7 +1398,7 @@ button {
       @media screen and (max-width: 450px) {
         .chat .chat-screen .video {
           width: 244px; } }
-      .chat .chat-screen .video img {
+      .chat .chat-screen .video img, .chat .chat-screen .video video {
         width: 100%; }
       .chat .chat-screen .video .button-block {
         position: absolute;

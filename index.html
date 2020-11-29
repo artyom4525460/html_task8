@@ -229,52 +229,58 @@
                     </form>
                 </div>
                 <div class="chat-screen shadow border-radius">
-                    <div class="item">
-                        <div class="item-block video-block-container">
-                            <div class="video-block center-flex">
-                                <div class="video">
-                                    <img src="./images/chat-video.png" alt="">
-                                    <div class="button-block">
-                                        <div class="button" onclick="alert('Play Button is working')">
-                                            <img src="./images/play-blue.svg" alt="">
+                    <div class="chat-container" id="chatScreen">
+                        <!-- <div class="item">
+                            <div class="item-block video-block-container">
+                                <div class="video-block center-flex">
+                                    <div class="video">
+                                        <img src="./images/chat-video.png" alt="">
+                                        <div class="button-block">
+                                            <div class="button">
+                                                <img src="./images/play-blue.svg" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <img src="./images/play.svg" alt="">
+                                <div class="time">2:25 PM</div>
                             </div>
-                            <div class="time">2:25 PM</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-block scale-block-container">
-                            <div class="scale shadow scale-block">
-                                <div class="controls">
-                                    <div class="play center-flex">
-                                        <img src="./images/play-blue.svg" alt="">
+                        </div> -->
+                        <!-- <div class="item">
+                            <div class="item-block scale-block-container">
+                                <div class="audio-block">
+                                    <audio controls>
+                                        <source src="./assets/test_audio.mp3">
+                                    </audio>
+                                </div> -->
+                                <!-- <div class="scale shadow scale-block">
+                                    <div class="controls">
+                                        <div class="play center-flex">
+                                            <img src="./images/play-blue.svg" alt="">
+                                        </div>
+                                        <div class="scale-btn"></div>
                                     </div>
-                                    <div class="scale-btn"></div>
+                                </div> -->
+                                <!-- <div class="time">2:25 PM</div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="item">
+                            <div class="item-block images-block-container">
+                                <div class="image-block">
+                                    <img src="./images/img2.png" alt="">
+                                    <img src="./images/img1.png" alt="">
                                 </div>
+                                <div class="time">2:25 PM</div>
                             </div>
-                            <div class="time">2:25 PM</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-block images-block-container">
-                            <div class="image-block">
-                                <img src="./images/img2.png" alt="">
-                                <img src="./images/img1.png" alt="">
+                        </div> -->
+                        <!-- <div class="item">
+                            <div class="item-block text-block-container">
+                                <div class="text-block">
+                                    Sorry, I did not get time to check the email today.
+    Contact me later.
+                                </div>
+                                <div class="time">2:25 PM</div>
                             </div>
-                            <div class="time">2:25 PM</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-block text-block-container">
-                            <div class="text-block">
-                                Sorry, I did not get time to check the email today.
-Contact me later.
-                            </div>
-                            <div class="time">2:25 PM</div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="chat-button">
                         <button class="button" id="chatBroadcastButton">
@@ -283,9 +289,10 @@ Contact me later.
                     </div>
                 </div>
                 <div class="send-message">
-                    <a href="" class="attache" onclick="alert('Open device memory so that user can select audio, video or images')"><img src="./images/attachment.png" alt=""></a>
-                    <input type="text" placeholder="Type a message" class="message-input">
-                    <button class="button send-button"  onclick="alert('show selected data’s icon in the div above. Text entered by user should also be displayed in the div above')">
+                    <input type="file" id="attacheInput" style="display:none">
+                    <a href="" class="attache" id="attacheInputLink"><img src="./images/attachment.png" alt=""></a>
+                    <input type="text" placeholder="Type a message" class="message-input" id="messageInput">
+                    <button class="button send-button" id="sendButton">
                         <img src="./images/send-button.svg" alt="send">
                     </button>
                 </div>
@@ -323,12 +330,17 @@ Make sure your number 03024491878  <br>
 is ready to receive calls
             </div>
             <div class="button-block">
-                <button class="primary-button" onclick="alert('Ok Button is working')">Ok</button>
+                <button class="primary-button" id="successOk">Ok</button>
             </div>
         </div>
 
     </section>
-    <script src="js/script.js"></script>
+    
+    <!-- <section class="modal-section hide" id="modalBlockUploadingSection">
+
+    </section> -->
+
+    <script src="dist/script.js"></script>
 </body>
 
 </html>
