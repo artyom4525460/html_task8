@@ -59,6 +59,7 @@ export const chat = {
     imageFileHtml : (src, id) => {
         return `
         <div class="item" id="item-${id}">
+        <div class="close-button" id="close-${id}"><img src='./images/close.svg'/></div>
             <div class="item-block images-block-container">
                 <div class="image-block">
                     <img id="${id}" src="${src}" alt="">
@@ -72,11 +73,13 @@ export const chat = {
     textHtml : (text, id) => {
         return `
             <div class="item" id="item-${id}">
-                <div class="item-block text-block-container">
-                    <div class="text-block">
-                        ${text}
+                <div class="close-button" id="close-${id}"><img src='./images/close.svg'/></div>
+                    <div class="item-block text-block-container">
+                        <div class="text-block">
+                            ${text}
+                        </div>
+                        <div class="time">2:25 PM</div>
                     </div>
-                    <div class="time">2:25 PM</div>
                 </div>
             </div>
         `
@@ -127,7 +130,7 @@ export const chat = {
                 chat.chatScreen.innerHTML += chat.imageFileHtml(fr.result, imageId)
                 resolve('ok')
             }).then(()=> {
-                let item = document.getElementById('item-' + imageId)
+                chatDeleteEventsUpdate()
             }) 
         }
     },
@@ -145,9 +148,7 @@ export const chat = {
             }).then(()=> {
                 let closeButton = document.getElementById('close-' + audioId)
                 let item = document.getElementById('item-' + audioId)
-                closeButton.addEventListener('click', function(){
-                    item.remove()
-                })
+                chatDeleteEventsUpdate()
             }) 
         }
     },
@@ -189,15 +190,33 @@ export const chat = {
                             break;
                     }
                 })
-                closeButton.addEventListener('click', function(){
-                    item.remove()
-                })
+                chatDeleteEventsUpdate()
             })
         }
     },
     
     addText : (text) => {
         let messageId = 'message-' + Math.floor(Math.random() * 1000)
-        chat.chatScreen.innerHTML += chat.textHtml(text, messageId)
+        let item, closeButton
+        new Promise( (resolve, reject) => {
+            chat.chatScreen.innerHTML += chat.textHtml(text, messageId)
+            resolve('ok')
+        }).then(() => {
+            chatDeleteEventsUpdate()
+        })
+
     }
 }
+
+var closeButtons
+
+function chatDeleteEventsUpdate(){
+    closeButtons = document.getElementsByClassName('close-button')
+    for( let i = 0; i < closeButtons.length; i++){
+        closeButtons[i].addEventListener('click', function(){
+            this.parentElement.remove()
+        }) 
+    }
+
+}
+//var chatDeleteEvents = []
