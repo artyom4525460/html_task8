@@ -6,6 +6,7 @@ export const video = {
     videoProgressBar : document.getElementById('videoProgressBar'),
     videoProgressButton : document.getElementById('videoProgressButton'),
     videoVol : document.getElementById('videoVol'),
+    videoVolUnmute : document.getElementById('videoVolUnmute'),
     videoControls: document.getElementById('videoControls'),
     videoTag: document.getElementById('videoTag'),
     isMoveProgressButton: false,
@@ -82,5 +83,15 @@ export const video = {
         else{
             video.videoTag.volume = (video.videoTag.volume + 0.1).toFixed(1)
         }
+    },
+    muteVol: () => {
+        video.videoTag.volume = 0
+        video.videoVol.style.display = 'none'
+        video.videoVolUnmute.style.display = 'block'
+    },
+    unmuteVol: () => {
+        video.videoTag.volume = 1
+        video.videoVol.style.display = 'block'
+        video.videoVolUnmute.style.display = 'none'
     }
 }

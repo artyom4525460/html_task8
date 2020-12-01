@@ -703,7 +703,7 @@ button {
   background-color: #eaf3ff; }
   .uploading-scale .progress {
     height: 100%;
-    width: 75%;
+    width: 0;
     background-color: #2f89fc; }
 
 .header {

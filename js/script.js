@@ -104,7 +104,9 @@ video.videoPlayButton.addEventListener('click', video.onPlay)
 video.videoTag.addEventListener('click', video.onPausePlay)
 video.videoTag.addEventListener('timeupdate', video.progressVideo)
 video.videoProgressButton.addEventListener('mousedown', video.moveProgressButton)
-video.videoVol.addEventListener('click', video.changeSoundVol)
+//video.videoVol.addEventListener('click', video.changeSoundVol)
+video.videoVol.addEventListener('click', video.muteVol)
+video.videoVolUnmute.addEventListener('click', video.unmuteVol)
 
 /**
  * 
