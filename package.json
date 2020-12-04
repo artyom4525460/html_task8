@@ -5,7 +5,7 @@
   "scripts": {
     "scss": "node-sass --watch scss -o css",
     "build": "webpack",
-    "watch": "webpack --watch --progress; node-sass --watch scss -o css"
+    "watch": "webpack --watch --progress"
   },
   "name": "html_task2",
   "version": "1.0.0",
