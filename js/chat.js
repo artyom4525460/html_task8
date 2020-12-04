@@ -12,6 +12,7 @@ export const chat = {
         if (FileReader && files && files.length) {
             let type = files[0].type.split('/')[0]
             chat.addSource(type, files[0])
+            attacheInput.value = null;
         }
         else {
 
